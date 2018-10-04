@@ -7,11 +7,18 @@ QUE LA ANTERIOR
 HACEMOS EL CÁLCULO Y VISUALIZAMOS EL RESULTADO.
 */
 DECLARE
-  impuesto CONSTANT number := 0.21;
+  impuesto CONSTANT NUMBER := 0.21;
   PRECIO   NUMBER(5,2);
   resultado PRECIO%TYPE;
 BEGIN
   PRECIO   := 350.00;
   RESULTADO:=(impuesto * precio);
   dbms_output.put_line('El impuesto es de: '||resultado);
+  DECLARE
+    total precio%type;
+  BEGIN
+  total :=(precio + resultado);
+  dbms_output.put_line('Precio total del producto: '||total);
+    dbms_output.put_line('Precio neto del producto: '||precio);
+  END;
 END;
